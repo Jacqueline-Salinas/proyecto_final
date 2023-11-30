@@ -1,5 +1,9 @@
 from django.urls import path, include
 
+from . import views
+
+app_name = "cliente"
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.home, name="index"),
 ]

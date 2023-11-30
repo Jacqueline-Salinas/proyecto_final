@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'core/base.html' %}
+
+{% block contenido_titulo %}
     <h1>PRODUCTO</h1>
-</body>
-</html>
+{% endblock contenido_titulo %}
+
+
+{% block contenido %}
+    <ul>
+        <li><a href="{% url 'core:index' %}">Volver al inicio</a></li>
+    </ul>
+{% endblock contenido %}
