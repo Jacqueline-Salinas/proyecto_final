@@ -29,20 +29,7 @@
             </div>
         </header>                       
         
-        <!-- Cards -->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {% include 'core/card.html' with 
-                    image='core/img/silla1.webp' 
-                    product_name='Silla Minimalista' 
-                    regular_price='$50.00' 
-                    sale_price='$25.00' 
-                    stars=4
-                    is_on_sale=True %}
-                </div>
-            </div>
-        </section>
+        {% include 'core/card.html' %}
         
         {% include 'core/footer.html' %}
 
