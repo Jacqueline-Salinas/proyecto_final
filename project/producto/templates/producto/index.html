@@ -7,33 +7,44 @@
 {% block contenido %}
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'core:index' %}" class="btn btn-link">Volver al inicio</a></li>
-                </ul>
-                <a href="{% url 'producto:crear_producto' %}" class="btn btn-primary btn-block">Crear Nuevo Producto</a>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Descripción</th>
-                            <!-- Añade más encabezados según los campos que quieras mostrar -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for producto in productos %}
-                            <tr>
-                                <td>{{ producto.nombre }}</td>
-                                <td>${{ producto.precio }}</td>
-                                <td>{{ producto.descripcion }}</td>
-                                <!-- Agrega más columnas según los campos que desees mostrar -->
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                
+            <div class="col-md-10">
+                <div class="text-right mb-3">
+                    <a href="{% url 'core:index' %}" class="btn btn-secondary">Volver al inicio</a>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Lista de Productos</h5>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'producto:crear_producto' %}" class="btn btn-success mb-3">Crear Nuevo Producto</a>
+                        <a href="{% url 'producto:crear_proveedor' %}" class="btn btn-success mb-3">Crear Nuevo Proveedor</a>
+                        <a href="{% url 'producto:crear_stock' %}" class="btn btn-success mb-3">Crear Nuevo Stock</a>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Descripción</th>
+                                    <th>Proveedor</th>
+                                    <th>Stock</th>
+                                    <!-- Añade más encabezados según los campos que quieras mostrar -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos %}
+                                    <tr>
+                                        <td>{{ producto.nombre }}</td>
+                                        <td>${{ producto.precio }}</td>
+                                        <td>{{ producto.descripcion }}</td>
+                                        <td>{{ producto.proveedor }}</td>
+                                        <td>{{ producto.stock.cantidad }}</td>
+                                        <!-- Agrega más columnas según los campos que desees mostrar -->
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
