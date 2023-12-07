@@ -4,9 +4,9 @@
     PRODUCTO
 {% endblock contenido_titulo %}
 
-
 {% block contenido %}
     <ul>
         <li><a href="{% url 'core:index' %}">Volver al inicio</a></li>
     </ul>
+    <a href="{% url 'producto:crear_producto' %}" class="btn btn-primary">Crear Nuevo Producto</a>
 {% endblock contenido %}
