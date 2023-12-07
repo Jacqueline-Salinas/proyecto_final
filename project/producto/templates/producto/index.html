@@ -5,8 +5,36 @@
 {% endblock contenido_titulo %}
 
 {% block contenido %}
-    <ul>
-        <li><a href="{% url 'core:index' %}">Volver al inicio</a></li>
-    </ul>
-    <a href="{% url 'producto:crear_producto' %}" class="btn btn-primary">Crear Nuevo Producto</a>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'core:index' %}" class="btn btn-link">Volver al inicio</a></li>
+                </ul>
+                <a href="{% url 'producto:crear_producto' %}" class="btn btn-primary btn-block">Crear Nuevo Producto</a>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                            <!-- Añade más encabezados según los campos que quieras mostrar -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in productos %}
+                            <tr>
+                                <td>{{ producto.nombre }}</td>
+                                <td>${{ producto.precio }}</td>
+                                <td>{{ producto.descripcion }}</td>
+                                <!-- Agrega más columnas según los campos que desees mostrar -->
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
 {% endblock contenido %}

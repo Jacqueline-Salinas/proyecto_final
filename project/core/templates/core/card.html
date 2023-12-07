@@ -1,32 +1,35 @@
 {% load static %}
 
-<!-- Cards -->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {% for producto in productos %}
-            <div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="{{ producto.foto.url }}" alt="{{ producto.nombre }}" />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{ producto.nombre }}</h5>
-                            <!-- Product price-->
-                            ${{ producto.precio }}
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="#">View options</a>
-                        </div>
+<style>
+    .card {
+        width: 18rem;
+        margin-top: 20px; /* Márgen superior para la tarjeta */
+        margin-bottom: 20px; /* Márgen inferior para la tarjeta */
+    }
+
+    .card-img-top {
+        height: 300px; /* Altura deseada para todas las imágenes */
+        object-fit: cover;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        {% for producto in productos %}
+            <div class="col-md-4">
+                <div class="card">
+                    <!-- Imagen del producto -->
+                    <img src="{{ producto.foto.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+                    <div class="card-body">
+                        <!-- Nombre del producto -->
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <!-- Precio del producto -->
+                        <p class="card-text">${{ producto.precio }}</p>
+                        <!-- Botón para ver detalles del producto -->
+                        <a href="#" class="btn btn-primary">Ver detalles</a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
-</section>
+</div>

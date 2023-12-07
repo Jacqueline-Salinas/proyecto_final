@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import *
+from .models import Producto
 
 def home(request):
     return render(request, 'producto/index.html')
 
-from django.shortcuts import render, redirect
-from .forms import ProductoForm
+def lista_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'producto/index.html', {'productos': productos})
 
 def crear_producto(request):
     if request.method == 'POST':
