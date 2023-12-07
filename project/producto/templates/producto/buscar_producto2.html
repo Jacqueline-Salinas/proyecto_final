@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+<!-- Agrega los estilos de Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Opcionalmente, puedes agregar tus propios estilos aquí -->
+<style>
+    /* Agrega estilos personalizados si es necesario */
+    body {
+        padding: 20px;
+    }
+    .card {
+        width: 400px;
+        margin: auto;
+    }
+    .btn-submit {
+        width: 100%;
+    }
+</style>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title text-center mb-4">Buscar Producto</h1>
+        <div class="container-fluid">
+            <form class="d-flex" method="post">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" name="nombre" placeholder="Buscar Producto" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        <a href="{% url 'producto:index' %}" class="btn btn-secondary mt-3">Volver</a>
+    </div>
+</div>
+{% endblock contenido %}

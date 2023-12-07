@@ -13,13 +13,14 @@ class Producto(models.Model):
     descripcion = models.TextField()
     foto = models.ImageField(upload_to='static/producto/img/')
     proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    stock = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.nombre
 
 
 class Stock(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='stocks')
     cantidad = models.PositiveIntegerField(default=0)
 
     def __str__(self):

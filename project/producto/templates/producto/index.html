@@ -1,9 +1,5 @@
 {% extends 'core/base.html' %}
 
-{% block contenido_titulo %}
-    PRODUCTO
-{% endblock contenido_titulo %}
-
 {% block contenido %}
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -19,6 +15,11 @@
                         <a href="{% url 'producto:crear_producto' %}" class="btn btn-success mb-3">Crear Nuevo Producto</a>
                         <a href="{% url 'producto:crear_proveedor' %}" class="btn btn-success mb-3">Crear Nuevo Proveedor</a>
                         <a href="{% url 'producto:crear_stock' %}" class="btn btn-success mb-3">Crear Nuevo Stock</a>
+                        <form class="d-flex" method="post">
+                            {% csrf_token %}
+                            <input class="form-control me-2" type="search" name="nombre" placeholder="Buscar Producto" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>                      
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -37,7 +38,7 @@
                                         <td>${{ producto.precio }}</td>
                                         <td>{{ producto.descripcion }}</td>
                                         <td>{{ producto.proveedor }}</td>
-                                        <td>{{ producto.stock.cantidad }}</td>
+                                        <td>{{ producto.stock }}</td>
                                         <!-- Agrega más columnas según los campos que desees mostrar -->
                                     </tr>
                                 {% endfor %}

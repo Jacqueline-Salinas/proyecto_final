@@ -15,3 +15,6 @@ class StockForm(forms.ModelForm):
     class Meta:
         model = Stock
         fields = '__all__'  # Puedes especificar los campos si no quieres incluirlos todos
+
+class BuscarForm(forms.Form):
+    nombre = forms.CharField()
