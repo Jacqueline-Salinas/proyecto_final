@@ -19,4 +19,8 @@ Este proyecto Django se compone de varias aplicaciones organizadas de la siguien
 ### Datos de Muestra:
 Se han incluido datos de muestra para que puedas revisar y evaluar la funcionalidad de la aplicación.
 
+### Uso de pagina:
+Al entrar a la pagina por primera vez se veran cargados algunos productos, debemos apretar productos en el navbar, en esa ruta se encuentran los formularios para ingresar datos a nuestros 3 modelos y tambien esta el formulario de busqueda.
+
+En el formulario producto debemos ingresar (ademas de nombre, precio, descripcion y proveedor) una imagen para que aparezca en nuestro home principal.
 ---
