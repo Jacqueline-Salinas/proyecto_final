@@ -39,6 +39,16 @@
                                         <td>{{ producto.descripcion }}</td>
                                         <td>{{ producto.proveedor }}</td>
                                         <td>{{ producto.stock }}</td>
+                                        <td>
+                                            <a href="{% url 'producto:actualizar_producto' pk=producto.pk %}" class="btn btn-primary">Actualizar</a>
+                                        </td>
+                                        <td>
+                                            <form action="{% url 'producto:borrar_producto' pk=producto.pk %}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Borrar</button>
+                                            </form>
+                                        </td>
+                                          
                                         <!-- Agrega más columnas según los campos que desees mostrar -->
                                     </tr>
                                 {% endfor %}
