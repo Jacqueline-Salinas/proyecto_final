@@ -75,6 +75,7 @@ def index(request):
 def borrar_producto(request, pk):
     producto = Producto.objects.get(pk=pk)
     producto.delete()
-    return redirect('lista_productos')
+    return redirect('producto:index')
+
 
         
