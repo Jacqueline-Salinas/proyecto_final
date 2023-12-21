@@ -5,5 +5,7 @@ from . import views
 app_name = "cliente"
 
 urlpatterns = [
-    path('', views.home, name="index"),
+    path('registro/', views.registro, name='registro'),
+    path('login/', views.iniciar_sesion, name='login'),
+    # Otros paths que puedas necesitar en esta app
 ]
