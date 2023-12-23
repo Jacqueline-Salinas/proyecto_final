@@ -12,3 +12,18 @@ class ClienteRegistroForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'password1', 'password2', 'nombre', 'apellido', 'nacionalidad', 'correo')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.save()
+
+        if commit:
+            # Crear el perfil del cliente asociado al usuario
+            perfil_cliente = PerfilCliente.objects.create(
+                user=user,
+                nombre=self.cleaned_data['nombre'],
+                apellido=self.cleaned_data['apellido'],
+                nacionalidad=self.cleaned_data['nacionalidad'],
+                correo=self.cleaned_data['correo']
+            )
+        return user
