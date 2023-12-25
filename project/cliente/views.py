@@ -38,11 +38,10 @@ def iniciar_sesion(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            if not user.is_superuser:  # Si el usuario no es un superusuario
+            if user.is_superuser:  # Verifica si el usuario es un administrador
                 return redirect('core:index')  # Redirige al home principal
             else:
-                return redirect('dashboard_admin')  # Redirige al dashboard de admin si es el superusuario
-        # Si el usuario es None o la autenticación falla, puede ser útil agregar un mensaje de error
+                return redirect('core:index')  # Redirige al home principal para el cliente normal
         else:
             # Manejar la lógica para un inicio de sesión fallido
             pass
