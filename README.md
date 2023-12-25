@@ -15,6 +15,11 @@ Este proyecto Django se compone de varias aplicaciones organizadas de la siguien
     - Formularios para cada modelo, permitiendo el ingreso y la gestión de información de manera eficiente.
     - Implementación de un formulario de búsqueda que filtra los productos según el nombre.
     - Se requiere la instalación adicional de la librería Pillow==10.1.0 para habilitar la funcionalidad de carga de imágenes en los formularios de productos. Esto puede realizarse con el comando `pip install Pillow`.
+4. **Cliente**:
+
+    - `Registro`: Formulario para que los usuarios puedan registrarse en la plataforma.
+    - `Login`: Interfaz de inicio de sesión para los usuarios existentes.
+    - `Restricción`: de acceso a ciertas URL para usuarios autenticados.
 
 ### Datos de Muestra:
 Se han incluido datos de muestra para que puedas revisar y evaluar la funcionalidad de la aplicación.
