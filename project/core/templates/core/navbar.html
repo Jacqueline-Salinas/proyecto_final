@@ -1,5 +1,5 @@
-   <!-- Navigation-->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="{% url 'core:index' %}">
             <strong>Jacq's Homely Touch</strong>
@@ -10,19 +10,19 @@
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:index' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'producto:index' %}">Producto</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:about' %}">Acerca</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Todos los productos</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Populares</a></li>
-                        <li><a class="dropdown-item" href="#!">Nuevos</a></li>
-                    </ul>
-                </li>
             </ul>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="{% url 'cliente:registro' %}">Registrarse</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'cliente:login' %}">Iniciar Sesión</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{ user.username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cliente:logout' %}">Cerrar Sesión</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cliente:registro' %}">Registrarse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cliente:login' %}">Iniciar Sesión</a></li>
+                {% endif %}
             </ul>            
             <form class="d-flex">
                 <button class="btn btn-outline-dark" type="submit">
