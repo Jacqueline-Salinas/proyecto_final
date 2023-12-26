@@ -1,4 +1,4 @@
-# Jacqueline Salinas - Pre-Entrega N° 3
+# Jacqueline Salinas - Proyecto Final
 
 ## Descripción del Proyecto
 
