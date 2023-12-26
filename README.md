@@ -25,7 +25,9 @@ Este proyecto Django se compone de varias aplicaciones organizadas de la siguien
 Se han incluido datos de muestra para que puedas revisar y evaluar la funcionalidad de la aplicación.
 
 ### Uso de pagina:
-Al entrar a la pagina por primera vez se veran cargados algunos productos, debemos apretar productos en el navbar, en esa ruta se encuentran los formularios para ingresar datos a nuestros 3 modelos y tambien esta el formulario de busqueda.
+Al entrar a la pagina por primera vez se veran cargados algunos productos, primero debemos hacer login con la cuenta de administrador (admin - 123) debemos apretar productos en el navbar, en esa ruta se encuentran los formularios para ingresar datos a nuestros 3 modelos y tambien esta el formulario de busqueda.
 
 En el formulario producto debemos ingresar (ademas de nombre, precio, descripcion y proveedor) una imagen para que aparezca en nuestro home principal.
 ---
+Como cliente solo es posible visualizar la pantalla inicial, donde se visualiza la imagen y el precio de producto. Como una funcionalidad posterior para habilitar en la pagina seria el carrito de compras y el cliente puede ir agregando los productos para posteriormente hacer la compra.
+
