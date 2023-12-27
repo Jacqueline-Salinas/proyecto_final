@@ -24,11 +24,9 @@ Este proyecto Django se compone de varias aplicaciones organizadas de la siguien
 ### Datos de Muestra:
 Se han incluido datos de muestra para que puedas revisar y evaluar la funcionalidad de la aplicación.
 usuario de muestra:
-admin
-clave:123 
+admin -- clave: 123 
 
-user
-clave: prueba123
+user -- clave: prueba123
 
 ### Uso de pagina:
 Al entrar a la pagina por primera vez se veran cargados algunos productos, primero debemos hacer login con la cuenta de administrador (admin - 123) debemos apretar productos en el navbar, en esa ruta se encuentran los formularios para ingresar datos a nuestros 3 modelos y tambien esta el formulario de busqueda.
